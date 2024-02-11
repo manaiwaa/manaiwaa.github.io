@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>-`♡´-</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #ffffff; /* Light pink background color */
+            font-family: Helvetica Neue,Helvetica,Arial,sans-serif; 
+            text-align: center;
+        }
+
+        #message {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        #proceedBtn {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #ff69b4; /* Pink button color */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #proceedBtn:hover {
+            background-color: #ff1493; /* Darker pink on hover */
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p id="message">i'll stop doubting you now. do you want to proceed? </p>
+        <button id="proceedBtn" onclick="proceed()">yes</button>
+    </div>
+
+    <script>
+        function proceed() {
+            window.location.href = 'loveenvelope.html'; // Change the URL to the next page
+        }
+    </script>
+</body>
+
+</html>

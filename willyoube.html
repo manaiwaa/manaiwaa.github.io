@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>-`♡´-</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #ffffff; /* Light pink background color */
+            font-family: Helvetica Neue,Helvetica,Arial,sans-serif; 
+        }
+
+        #question-container {
+            padding: 20px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #question {
+            margin-bottom: 20px;
+            font-size: 20px;
+            color: #333;
+        }
+
+        #options {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        input[type="button"] {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #ff69b4; /* Pink button color */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="button"]:hover {
+            background-color: #ff1493; /* Darker pink on hover */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="question-container">
+        <p id="question">will you be my valentine?</p>
+        <div id="options">
+            <form id="answerForm">
+                <input type="radio" id="valentineYes" name="valentine" value="yes">
+                <label for="valentineYes">yes</label><br>
+                <input type="radio" id="valentineNo" name="valentine" value="no">
+                <label for="valentineNo">no</label><br>
+            </form>
+        </div>
+        <input type="button" id="submitBtn" value="submit" onclick="checkAnswer()">
+    </div>
+
+    <script>
+        function checkAnswer() {
+            var radios = document.getElementsByName('valentine');
+            var answer = "";
+            for (var i = 0; i < radios.length; i++) {
+                if (radios[i].checked) {
+                    answer = radios[i].value;
+                    break;
+                }
+            }
+
+            if (answer === "yes") {
+                // Proceed to the next page or action
+                window.location.href = "dog.html";
+            } else {
+                // Ask the question again
+                alert("WRONG ANSWER!!!! try again");
+            }
+        }
+    </script>
+</body>
+
+</html>

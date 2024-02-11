@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>-`♡´-</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #ffffff; /* Light pink background color */
+            font-family: Helvetica Neue,Helvetica,Arial,sans-serif; 
+        }
+
+        #question-container {
+            padding: 20px;
+            border-radius: 10px;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #question {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        #form-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #foodInput {
+            width: 300px; /* Adjust width as needed */
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        #submitBtn {
+            display: block;
+            margin: 0 auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #ff69b4; /* Pink button color */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #submitBtn:hover {
+            background-color: #ff1493; /* Darker pink on hover */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="question-container">
+        <p id="question">if you're really henning, what are we eating on feb 14th?</p>
+        <div id="form-container">
+            <form id="foodForm" onsubmit="checkFood(event)">
+                <input type="text" id="foodInput" placeholder="enter food...">
+                <br>
+                <input type="submit" id="submitBtn" value="check">
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function checkFood(event) {
+            event.preventDefault();
+            var food = document.getElementById('foodInput').value.toLowerCase();
+            if (food === 'ramen') {
+                window.location.href = 'ramen.html';
+            } else {
+                alert('you are probably not henning... bye!');
+            }
+        }
+    </script>
+</body>
+
+</html>

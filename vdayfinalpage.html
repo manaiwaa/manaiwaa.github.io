@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>-`♡´-</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+            background-color: #ffffff; /* Light pink background color */
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        }
+
+        .confetti-heart {
+            position: absolute;
+            width: 100%; /* Width set to 100% */
+            max-width: 100px; /* Maximum width as needed */
+            height: auto; /* Height auto to maintain aspect ratio */
+            animation: fall 3s linear forwards;
+            display: none; /* Initially hide confetti */
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <p id="message">ofc that's the only right answer 😌</p>
+    <p id="see-you" style="display: none;">see you soon ~~</p>
+
+    <!-- Create confetti elements -->
+    <script>
+        // Function to create confetti
+        function createConfetti() {
+            // Define the number of confetti hearts to create
+            var numConfetti = 100;
+
+            // Get the width and height of the viewport
+            var viewportWidth = window.innerWidth;
+            var viewportHeight = window.innerHeight;
+
+            // Create confetti hearts and add them to the body
+            for (var i = 0; i < numConfetti; i++) {
+                var confetti = document.createElement('img');
+                confetti.src = '/Users/manaiwasaki/Downloads/balloon.webp'; // Image source
+                confetti.className = 'confetti-heart';
+                confetti.style.left = Math.random() * viewportWidth + 'px';
+                confetti.style.top = Math.random() * viewportHeight + 'px'; // Randomize top position
+                confetti.style.animationDelay = Math.random() * 3 + 's';
+                document.body.appendChild(confetti);
+            }
+        }
+
+        // Call the function to create confetti
+        createConfetti();
+
+        // Wait for 2 seconds before showing the message and confetti
+        setTimeout(function () {
+            // Display the confetti
+            var confettiElements = document.getElementsByClassName('confetti-heart');
+            for (var i = 0; i < confettiElements.length; i++) {
+                confettiElements[i].style.display = 'block';
+            }
+
+            // Hide the message
+            var messageElement = document.getElementById('message');
+            messageElement.style.display = 'none';
+
+            // Remove the confetti and show the "See you tonight!" message after confetti animation ends
+            setTimeout(function() {
+                var confettiElements = document.getElementsByClassName('confetti-heart');
+                for (var i = 0; i < confettiElements.length; i++) {
+                    confettiElements[i].remove();
+                }
+                var seeYouElement = document.getElementById('see-you');
+                seeYouElement.style.display = 'block';
+            }, 3000); // Adjust the delay based on the confetti animation duration (3 seconds)
+        }, 2000); // Adjust the delay for the message to be displayed (2 seconds)
+    </script>
+</body>
+
+</html>

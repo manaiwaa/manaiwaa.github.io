@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>-`♡´-</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #ffffff; /* Light pink background color */
+            font-family: Helvetica Neue,Helvetica,Arial,sans-serif; 
+        }
+
+        #question-container {
+            padding: 20px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #question {
+            margin-bottom: 20px;
+            font-size: 20px;
+            color: #333;
+        }
+
+        #options {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        input[type="button"] {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #ff69b4; /* Pink button color */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="button"]:hover {
+            background-color: #ff1493; /* Darker pink on hover */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="question-container">
+        <p id="question">are you henning?</p>
+        <div id="options">
+            <form id="answerForm">
+                <input type="radio" id="nameyes" name="whoareyou" value="yes">
+                <label for="nameyes">yes</label><br>
+                <input type="radio" id="nameno" name="whoareyou" value="no">
+                <label for="nameno">no</label><br>
+            </form>
+        </div>
+        <input type="button" id="submitBtn" value="proceed" onclick="checkAnswer()">
+    </div>
+
+    <script>
+        function checkAnswer() {
+            var radios = document.getElementsByName('whoareyou');
+            var answer = "";
+            for (var i = 0; i < radios.length; i++) {
+                if (radios[i].checked) {
+                    answer = radios[i].value;
+                    break;
+                }
+            }
+
+            if (answer === "yes") {
+                // Proceed to the next page
+                window.location.href = "checking.html";
+            } else {
+                // Ask the question again
+                alert("then why are you here?");
+            }
+        }
+    </script>
+</body>
+
+</html>

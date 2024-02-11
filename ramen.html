@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>-`♡´-</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #ffffff; /* Light pink background color */
+            font-family: Arial, sans-serif;
+        }
+
+        #loading-gif {
+            width: 100%; /* Width set to 100% */
+            max-width: 500px; /* Maximum width as needed */
+            height: auto; /* Height auto to maintain aspect ratio */
+        }
+    </style>
+</head>
+
+<body>
+    <img id="loading-gif" src="file:///Users/manaiwasaki/Downloads/ramen.gif" alt="Loading Heart">
+
+    <script>
+        // Wait for GIF to play once, then redirect to the next page
+        document.getElementById('loading-gif').addEventListener('load', function() {
+            setTimeout(function () {
+                window.location.href = 'proceed.html'; // Redirect to the next page
+            }, 2300); // Adjust the delay as needed (1000 milliseconds = 1 second)
+        }, { once: true });
+    </script>
+</body>
+
+</html>

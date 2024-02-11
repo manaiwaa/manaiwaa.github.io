@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>-`♡´-</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #ffffff; /* Light pink background color */
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            text-align: center;
+        }
+
+        #message {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        #proceedBtn {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #ff69b4; /* Pink button color */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            position: absolute;
+        }
+
+        #proceedBtn:hover {
+            background-color: #ff1493; /* Darker pink on hover */
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p id="message">are you sure?</p>
+        <button id="proceedBtn" onclick="moveButton()">yes</button>
+    </div>
+
+    <script>
+        var clicks = 0;
+
+        function moveButton() {
+            clicks++;
+            var button = document.getElementById('proceedBtn');
+            var screenWidth = window.innerWidth;
+            var screenHeight = window.innerHeight;
+            var newX = Math.random() * (screenWidth - 150); // Adjust 150 based on the button's width
+            var newY = Math.random() * (screenHeight - 50); // Adjust 50 based on the button's height
+            button.style.left = newX + 'px';
+            button.style.top = newY + 'px';
+            if (clicks >= 5) {
+                window.location.href = 'afterconfirmation.html'; // Redirect to the next page
+            }
+        }
+    </script>
+</body>
+
+</html>
